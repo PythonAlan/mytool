@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>成本查询系统「吕毅」</title>
+	<link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css"></style>
+<style>
+table, td, th
+{
+	border:1px solid green;
+}
+th
+{
+	background-color:green;
+	color:black;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+
+<h1><p class="text-primary">售价成本查询结果</p></h1>
+
+<table class="table table-bordered">
+
+
+
+	<thead>
+    <tr class="danger">
+
+
+			<th>物流方式</th>
+            <th>售价(当地货币）</th>
+            <th>重量(g）</th>
+            <th>采购价¥</th>
+			<th>总成本¥</th>
+			<th>二程费用(当地货币)</th>
+            <th>头程费用¥</th>
+			<th>平台费¥</th>
+			<th>毛利润¥</th>
+            <th>当前利润率</th>
+			<th>0%利润率售价</th>
+			<th>5%利润率售价</th>
+            <th>10%利润率售价</th>
+            <th>15%利润率售价</th>
+            <th>20%利润率售价</th>
+            <th>25%利润率售价</th>
+            <th>30%利润率售价</th>
+
+
+    </tr>
+	</thead>
+
+
+	<tbody>
+
+		<tr class="active">
+			<td>万邑通US</td>
+            <td>{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}</td>
+            <td>{{ result_list.purchase_price }}</td>
+			<td>{{ result_list.total_cost_wini_us }}</td>
+			<td>{{ result_list.second_class_wini_us}}</td>
+            <td>{{ result_list.first_class_cost_wini_us }}</td>
+            <td>{{ result_list.commission_cost_us }}</td>
+            <td>{{ result_list.gross_profit_wini_us }}</td>
+            <td>{{ result_list.profit_margins_wini_us }}%</td>
+            <td>${{ result_list.zero_sale_price_wini_us }}</td>
+            <td>${{ result_list.five_sale_price_wini_us }}</td>
+            <td>${{ result_list.ten_sale_price_wini_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_wini_us }}</td>
+            <td>${{ result_list.twenty_sale_price_wini_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_wini_us }}</td>
+            <td>${{ result_list.thirty_sale_price_wini_us }}</td>
+
+		</tr>
+
+		<tr class="success">
+			<td>中邮US</td>
+            <td>{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}</td>
+            <td>{{ result_list.purchase_price }}</td>
+			<td>{{ result_list.total_cost_cn_us }}</td>
+			<td>{{ result_list.second_class_cn_us}}</td>
+            <td>{{ result_list.first_class_cost_cn_us }}</td>
+            <td>{{ result_list.commission_cost_us }}</td>
+            <td>{{ result_list.gross_profit_cn_us }}</td>
+            <td>{{ result_list.profit_margins_cn_us }}%</td>
+            <td>${{ result_list.zero_sale_price_cn_us }}</td>
+            <td>${{ result_list.five_sale_price_cn_us }}</td>
+            <td>${{ result_list.ten_sale_price_cn_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_cn_us }}</td>
+            <td>${{ result_list.twenty_sale_price_cn_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_cn_us }}</td>
+            <td>${{ result_list.thirty_sale_price_cn_us }}</td>
+		</tr>
+		<tr class="warning">
+			<td>线下FBAUS</td>
+            <td>{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}</td>
+            <td>{{ result_list.purchase_price }}</td>
+			<td>{{ result_list.total_cost_mulfba_us }}</td>
+			<td>{{ result_list.second_class_mulfba_us}}</td>
+            <td>{{ result_list.first_class_cost_mulfba_us }}</td>
+            <td>{{ result_list.commission_cost_us }}</td>
+            <td>{{ result_list.gross_profit_mulfba_us }}</td>
+            <td>{{ result_list.profit_margins_mulfba_us }}%</td>
+            <td>${{ result_list.zero_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.five_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.ten_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.twenty_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.thirty_sale_price_mulfba_us }}</td>
+		</tr>
+		<tr class="danger">
+			<td>线下EUB美国</td>
+            <td>{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}</td>
+            <td>{{ result_list.purchase_price }}</td>
+			<td>{{ result_list.total_cost_eub_us }}</td>
+			<td>{{ result_list.second_class_eub_us}}</td>
+            <td>{{ result_list.first_class_cost_eub_us }}</td>
+            <td>{{ result_list.commission_cost_us }}</td>
+            <td>{{ result_list.gross_profit_eub_us }}</td>
+            <td>{{ result_list.profit_margins_eub_us }}%</td>
+            <td>${{ result_list.zero_sale_price_eub_us }}</td>
+            <td>${{ result_list.five_sale_price_eub_us }}</td>
+            <td>${{ result_list.ten_sale_price_eub_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_eub_us }}</td>
+            <td>${{ result_list.twenty_sale_price_eub_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_eub_us }}</td>
+            <td>${{ result_list.thirty_sale_price_eub_us }}</td>
+		</tr>
+		<tr class="active">
+			<td>万邑通AU</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+		</tr>
+ 		<tr class="success">
+			<td>本地UK</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+		</tr>
+		<tr class="warning">
+			<td>本地DE</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+		</tr>
+		<tr class="danger">
+			<td>本地AU</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+		</tr>
+	</tbody>
+</table>
+
+<p class="text-right">
+
+        <a href="javascript:window.location.href = window.location.href.replace(/#/g,'');"><button type="button" class="btn btn-info btn-lg">返回</button></a>
+
+</p>
+
+
+
+
+
+</body>
+</html>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
